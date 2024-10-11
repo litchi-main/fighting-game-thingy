@@ -1,0 +1,66 @@
+[
+  {
+    "name": "n.L",
+    "startup": 9,
+    "active": 2,
+    "recovery": 9,
+    "hitstun": 12,
+    "blockstun": 6,
+    "hitBoxDimensions": [
+
+      1,
+      2.18,
+      1.5,
+      1
+
+    ]
+  },
+  {
+    "name": "n.H",
+    "startup": 13,
+    "active": 4,
+    "recovery": 17,
+    "hitstun": 19,
+    "blockstun": 10,
+    "hitBoxDimensions": [
+
+      1.2,
+      1.65,
+      4.5,
+      3
+
+    ]
+  },
+  {
+    "name": "j.L",
+    "startup": 10,
+    "active": 3,
+    "recovery": 10,
+    "hitstun": 20,
+    "blockstun": 2,
+    "hitBoxDimensions": [
+
+      1.25,
+      1.65,
+      1.4,
+      1.25
+
+    ]
+  },
+  {
+    "name": "j.H",
+    "startup": 15,
+    "active": 5,
+    "recovery": 25,
+    "hitstun": 29,
+    "blockstun": 10,
+    "hitBoxDimensions": [
+
+      0.65,
+      0,
+      6.35,
+      3.8
+
+    ]
+  }
+]
