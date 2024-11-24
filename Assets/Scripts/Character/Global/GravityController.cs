@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -9,9 +8,9 @@ public class GravityController : MonoBehaviour
     public bool IsGrounded {  get; private set; }
 
     [Header("Params")]
-    [SerializeField] private float _gravityScale = 1.5f;
-    [SerializeField] private float _maxVelocity = 40f;
-    [SerializeField] private float _minVelocity = -40f;
+    [SerializeField] private float _gravityScale = 3f;
+    [SerializeField] private float _maxVelocity = 200f;
+    [SerializeField] private float _minVelocity = -200f;
 
     [Header("Components")]
     [SerializeField] private CharacterController _characterController;
@@ -29,8 +28,7 @@ public class GravityController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        CollisionFlags collisionFlags = _characterController.Move(Vector2.up * YVelocity * Time.fixedDeltaTime);
+        CollisionFlags collisionFlags = _characterController.Move(Time.fixedDeltaTime * YVelocity * Vector2.up);
 
         bool isGrounded = collisionFlags.HasFlag(CollisionFlags.Below);
 
@@ -38,7 +36,7 @@ public class GravityController : MonoBehaviour
         {
             YVelocity = Mathf.Min(YVelocity, 0f);
         }
-            
+
 
         if (!isGrounded
             && IsGrounded)

@@ -19,8 +19,6 @@ public class Hitbox : MonoBehaviour
     private void Start()
     {
         _activeFrames = _activeFrames == default ? 10 : _activeFrames;
-        _activeFrames = _activeFrames == default ? 10 : _activeFrames;
-        _activeFrames = _activeFrames == default ? 10 : _activeFrames;
     }
 
     private void Update()

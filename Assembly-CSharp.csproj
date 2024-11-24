@@ -63,13 +63,14 @@
     <Compile Include="Assets\Scripts\Character\Player\OrientationController.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\IAttackInput.cs" />
     <Compile Include="Assets\Scripts\Character\Global\GravityController.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\Movement\Jump.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Movement\AirMovement.cs" />
     <Compile Include="Assets\Scripts\FPSLimiter.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\ActionController.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\Attack.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\AttackAnimation.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Defense\Hurtbox.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Collision\CollisionWithPlayers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

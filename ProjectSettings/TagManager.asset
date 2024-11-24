@@ -13,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Interaction/Hurtboxes
+  - CollisionBoxes
+  - Interaction/Hitboxes
   - 
   - 
   - 

@@ -11,6 +11,46 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 3418759184844595977, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759184844595982, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_TagString
+      value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759185271691175, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_Name
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759185271691175, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_TagString
+      value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <JumpKey>k__BackingField
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <LeftKey>k__BackingField
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <RightKey>k__BackingField
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <HeavyAttackKey>k__BackingField
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <LightAttackKey>k__BackingField
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418759186468513108, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <ManualOrientSwitch>k__BackingField
+      value: 274
+      objectReference: {fileID: 0}
     - target: {fileID: 9010386899998712161, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
       propertyPath: m_RootOrder
       value: 0

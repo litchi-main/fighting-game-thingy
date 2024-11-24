@@ -1,3 +1,4 @@
+using UnityEditor.UIElements;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -16,8 +17,11 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
     [SerializeField] private ActionController _actionController;
     [SerializeField] private Player _player;
 
-    private Vector2 _XVelocity { get; set; }
+    private Vector2 _XVelocityFinal { get; set; }
+    private Vector2 _XVelocityAdditive { get; set; }
     private Vector2 _VelocityInput;
+    private float _characterRadius;
+    private bool _isplayeronme;
 
     private void Awake()
     {
@@ -25,6 +29,8 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
         _gravityController = GetComponent<GravityController>();
         _actionController = GetComponent<ActionController>();
         _player = GetComponent<Player>();
+        _characterRadius = _characterController.radius;
+        _isplayeronme = false;
     }
 
     private void Start()
@@ -49,20 +55,20 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
 
     private void Update()
     {
+        _characterController.Move(_XVelocityFinal * Time.deltaTime);
+
+        _XVelocityFinal = Vector2.zero;
+
         if (_gravityController.IsGrounded)
             if (_actionController.IsInNeutral())
             {
                 _VelocityInput.Set(LRMovement(), UDMovement());
-                _XVelocity = _VelocityInput * (_VelocityInput.x > 0 ? _walkRightSpeed : _walkLeftSpeed) * Time.deltaTime;
+                _XVelocityFinal = (_VelocityInput.x > 0 ? _walkRightSpeed : _walkLeftSpeed) * _VelocityInput;
             }
-            else
-                _XVelocity = Vector2.zero;
 
-        CollisionFlags collisionFlags = _characterController.Move(_XVelocity);
+        _XVelocityFinal += _XVelocityAdditive;
 
-
-        if (collisionFlags.HasFlag(CollisionFlags.Sides))
-            _XVelocity = Vector2.zero;
+        _XVelocityAdditive = Vector2.zero;
     }
 
     public void SwapWalkSpeeds()
@@ -72,26 +78,36 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
 
     public void SetVelocity(float velocity)
     {
-        _XVelocity = new Vector2(velocity, _XVelocity.y);
+        _XVelocityFinal = new Vector2(velocity, _XVelocityFinal.y);
     }
 
     public void AddVelocity(float velocity, float limit = 0f)
     {
-        switch (_XVelocity.x + velocity)
+        switch (_XVelocityAdditive.x + velocity)
         {
             case float i when limit == 0f
             || Mathf.Abs(i) < limit:
-                _XVelocity = new Vector2(i, _XVelocity.y);
+                _XVelocityAdditive = new Vector2(i, _XVelocityAdditive.y);
                 break;
             case float i when i > 0f:
-                _XVelocity = new Vector2(limit, _XVelocity.y);
+                _XVelocityAdditive = new Vector2(limit, _XVelocityAdditive.y);
                 break;
             case float i when i < 0f:
-                _XVelocity = new Vector2(-limit, _XVelocity.y);
+                _XVelocityAdditive = new Vector2(-limit, _XVelocityAdditive.y);
                 break;
             default:
                 break;
         }
+    }
+
+    public Vector2 GetBaseVelocity()
+    {
+        return _XVelocityFinal;
+    }
+
+    public Vector2 GetFullVelocity()
+    {
+        return _XVelocityFinal + _XVelocityAdditive;
     }
 
 #if UNITY_EDITOR
