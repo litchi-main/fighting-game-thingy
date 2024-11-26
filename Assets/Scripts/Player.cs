@@ -8,18 +8,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [field: Header("Components")]
-    [field: SerializeField] public CharacterController _characterController {  get; protected set; }
+    [field: SerializeField] public CharacterController _characterController { get; protected set; }
     [field: SerializeField] public GravityController _gravityController { get; protected set; }
     [field: SerializeField] public Animator _animator { get; protected set; }
     [field: SerializeField] public OrientationController _orientationController { get; protected set; }
-    [field: SerializeField] public bool baseOrientation { get; protected set; } 
-    
+    [field: SerializeField] public bool baseOrientation { get; protected set; }
+
     [field: SerializeField] public KeyCode LeftKey { get; protected set; }
     [field: SerializeField] public KeyCode RightKey { get; protected set; }
     [field: SerializeField] public KeyCode JumpKey { get; protected set; }
     [field: SerializeField] public KeyCode ManualOrientSwitch { get; protected set; } //delete later
-    [field: SerializeField] public KeyCode LightAttackKey { get; protected set; } 
-    [field: SerializeField] public KeyCode HeavyAttackKey { get; protected set; } 
+    [field: SerializeField] public KeyCode LightAttackKey { get; protected set; }
+    [field: SerializeField] public KeyCode HeavyAttackKey { get; protected set; }
 
     private void Awake()
     {

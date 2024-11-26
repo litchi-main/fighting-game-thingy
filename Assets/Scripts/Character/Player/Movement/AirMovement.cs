@@ -61,7 +61,7 @@ public class AirMovement : MonoBehaviour, IMovementInput
             if (input == 1f)
             {
                 int jumpStrength = maxAirJumps - _jumpsLeft;
-                _Velocity.Set(LRMovement() * (_jumpHorizontalVelocity - jumpStrength),0);
+                _Velocity.Set(LRMovement() * (_jumpHorizontalVelocity - jumpStrength), 0);
                 _gravityController.SetVelocity(jumpForce);
                 if (_gravityController.IsGrounded)
                     RefreshJumps();
@@ -76,7 +76,7 @@ public class AirMovement : MonoBehaviour, IMovementInput
             _horizontalMovementController.AddVelocity(_Velocity.x);
     }
 
-    private void RefreshJumps ()
+    private void RefreshJumps()
     {
         _jumpsLeft = maxAirJumps;
     }

@@ -2,7 +2,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -16,7 +15,7 @@ public class ActionController : MonoBehaviour, IAttackInput
     [SerializeField] private AttackAnimation _animationController;
 
 
-    private Dictionary <string, Attack> _attackList = new Dictionary<string, Attack>();
+    private Dictionary<string, Attack> _attackList = new Dictionary<string, Attack>();
     private int _stun;
     private State _playerState;
     private bool _attackStartedInTheAir;

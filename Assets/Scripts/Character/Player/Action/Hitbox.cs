@@ -24,11 +24,11 @@ public class Hitbox : MonoBehaviour
     private void Update()
     {
         _activeFrames--;
-        if (_activeFrames < 0 )
+        if (_activeFrames < 0)
             TurnHitboxOff();
     }
 
-    private void OnTriggerEnter2D (Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!gameObject.CompareTag(other.gameObject.tag))
         {

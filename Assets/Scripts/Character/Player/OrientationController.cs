@@ -12,11 +12,11 @@ public class OrientationController : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private MovementAnimation _animationController;
     [SerializeField] private HorizontalMovement _movementController;
-    
+
     private bool Orientation;
     private bool _prevOrientation;
 
-    public OrientationController ()
+    public OrientationController()
     {
         _prevOrientation = false;
     }
@@ -33,14 +33,14 @@ public class OrientationController : MonoBehaviour
     {
         if (_prevOrientation != Orientation)
         {
-            _player.transform.localScale = new Vector3(_player.transform.localScale.x * -1,1,1);
+            _player.transform.localScale = new Vector3(_player.transform.localScale.x * -1, 1, 1);
             _animationController.SwapWalkAnimations();
             _movementController.SwapWalkSpeeds();
         }
         _prevOrientation = Orientation;
     }
 
-    public void SwapOrientation ()
+    public void SwapOrientation()
     {
         Orientation = Orientation ? false : true;
     }

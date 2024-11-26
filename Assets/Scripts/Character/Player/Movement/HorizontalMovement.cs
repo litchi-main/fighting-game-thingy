@@ -1,4 +1,3 @@
-using UnityEditor.UIElements;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]

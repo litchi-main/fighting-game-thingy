@@ -1,7 +1,6 @@
 using UnityEngine;
-using static UnityEngine.Tilemaps.Tile;
 
-[RequireComponent (typeof(BoxCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 
 public class CollisionWithPlayers : MonoBehaviour
 {
@@ -68,4 +67,12 @@ public class CollisionWithPlayers : MonoBehaviour
             }
         }
     }
+
+#if UNITY_EDITOR
+    [ContextMenu(nameof(TryGetComponents))]
+    protected void TryGetComponents()
+    {
+        _collider = GetComponent<BoxCollider2D>();
+    }
+#endif
 }
