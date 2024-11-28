@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [field: SerializeField] public Animator _animator { get; protected set; }
     [field: SerializeField] public OrientationController _orientationController { get; protected set; }
     [field: SerializeField] public bool baseOrientation { get; protected set; }
+    [field: SerializeField] public Player opponent { get; protected set; }
 
     [field: SerializeField] public KeyCode LeftKey { get; protected set; }
     [field: SerializeField] public KeyCode RightKey { get; protected set; }

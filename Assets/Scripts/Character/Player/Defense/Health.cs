@@ -6,7 +6,8 @@ public class Health : MonoBehaviour
     [Header("params")]
     [SerializeField] private float _baseHealth;
 
-    private event EventHandler healthChanged;
+    public delegate void HealthCallback(float prevHealth, float diff);
+    private event HealthCallback healthChanged;
     private event EventHandler healthEnded;
     private float currentHealth;
     void Start()
@@ -14,17 +15,22 @@ public class Health : MonoBehaviour
         currentHealth = _baseHealth;
     }
 
+    void showHp()
+    {
+        Debug.Log(gameObject.tag + " " + currentHealth);
+    }
+
     public void hit(float amount)
     {
+        healthChanged?.Invoke(currentHealth, amount);
         currentHealth -= amount;
-        healthChanged?.Invoke(this, EventArgs.Empty);
 
         if (currentHealth <= 0)
             healthEnded?.Invoke(this, EventArgs.Empty);
     }
 
-    void Update()
+    public void addHealthChangedEvent(HealthCallback function)
     {
-
+        healthChanged += function;
     }
 }

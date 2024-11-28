@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\Player\Movement\HorizontalMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Collision\CollisionWithCameraBounds.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\Hitbox.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Defense\Health.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Movement\MovementAnimation.cs" />
@@ -70,12 +71,12 @@
     <Compile Include="Assets\Scripts\Character\Player\Action\ActionController.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\Attack.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\Action\AttackAnimation.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\Defense\Hurtbox.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraResolution.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\Collision\CollisionWithCameraBounds.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Collision\PixelToUnitConverter.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Action\AttackAnimation.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraResolution.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Defense\Hurtbox.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Defense\HealthBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

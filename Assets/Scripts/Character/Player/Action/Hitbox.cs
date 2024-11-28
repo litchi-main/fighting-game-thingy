@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -10,6 +11,7 @@ public class Hitbox : MonoBehaviour
     public int _activeFrames;
     public int _hitStun;
     public int _blockStun;
+    public float _damage;
 
     private void Awake()
     {
@@ -32,9 +34,21 @@ public class Hitbox : MonoBehaviour
     {
         if (!gameObject.CompareTag(other.gameObject.tag))
         {
-            other.GetComponent<Hurtbox>().GetHit(_hitStun, _blockStun);
-            Destroy(gameObject);
+            HitObject(other);
         }
+    }
+
+    private void HitObject(Collider2D other)
+    {
+        try
+        {
+            other.GetComponent<Hurtbox>().GetHit(_hitStun, _blockStun, _damage);
+        }
+        catch
+        {
+
+        }
+        TurnHitboxOff();
     }
 
     public void TurnHitboxOff()

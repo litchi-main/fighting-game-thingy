@@ -6,6 +6,7 @@
     "recovery": 9,
     "hitstun": 12,
     "blockstun": 6,
+    "damage": 10,
     "hitBoxDimensions": [
 
       1,
@@ -22,6 +23,7 @@
     "recovery": 17,
     "hitstun": 19,
     "blockstun": 10,
+    "damage": 10,
     "hitBoxDimensions": [
 
       1.2,
@@ -38,6 +40,7 @@
     "recovery": 10,
     "hitstun": 20,
     "blockstun": 2,
+    "damage": 10,
     "hitBoxDimensions": [
 
       1.25,
@@ -54,6 +57,7 @@
     "recovery": 25,
     "hitstun": 29,
     "blockstun": 10,
+    "damage": 10,
     "hitBoxDimensions": [
 
       0.65,

@@ -14,9 +14,9 @@ public class Hurtbox : MonoBehaviour
         _collider = GetComponent<BoxCollider2D>();
     }
 
-    public void GetHit(int hitStun, int blockStun)
+    public void GetHit(int hitStun, int blockStun, float damage)
     {
-        gameObject.GetComponentInParent<ActionController>().GetHit(hitStun, blockStun);
+        gameObject.GetComponentInParent<ActionController>().GetHit(hitStun, blockStun, damage);
     }
 
     public void TurnHurtboxOff()

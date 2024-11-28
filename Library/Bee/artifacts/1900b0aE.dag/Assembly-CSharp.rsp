@@ -418,6 +418,7 @@
 "Assets/Scripts/Character/Player/Collision/CollisionWithPlayers.cs"
 "Assets/Scripts/Character/Player/Collision/PixelToUnitConverter.cs"
 "Assets/Scripts/Character/Player/Defense/Health.cs"
+"Assets/Scripts/Character/Player/Defense/HealthBar.cs"
 "Assets/Scripts/Character/Player/Defense/Hurtbox.cs"
 "Assets/Scripts/Character/Player/Movement/AirMovement.cs"
 "Assets/Scripts/Character/Player/Movement/HorizontalMovement.cs"

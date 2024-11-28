@@ -54,7 +54,11 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
 
     private void Update()
     {
+        _XVelocityFinal *= new Vector2(1, 0);
+
         _characterController.Move(_XVelocityFinal * Time.deltaTime);
+
+        _isplayeronme = _characterController.collisionFlags.HasFlag(CollisionFlags.Sides);
 
         _XVelocityFinal = Vector2.zero;
 

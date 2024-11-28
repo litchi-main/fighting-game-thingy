@@ -9,10 +9,11 @@ public class Attack
     public int recovery;
     public int hitStun;
     public int blockStun;
+    public float damage;
     public List<float> hitboxDimensions;
 
-    public void TurnOnHitbox(Action<List<float>, int[]> Generate)
+    public void TurnOnHitbox(Action<List<float>, float[]> Generate)
     {
-        Generate(hitboxDimensions, new int[]{ active, hitStun, blockStun});
+        Generate(hitboxDimensions, new float[]{ active, hitStun, blockStun, damage});
     }
 }

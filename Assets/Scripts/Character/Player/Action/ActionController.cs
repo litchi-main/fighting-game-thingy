@@ -13,7 +13,7 @@ public class ActionController : MonoBehaviour, IAttackInput
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _baseHitbox;
     [SerializeField] private AttackAnimation _animationController;
-
+    [SerializeField] private Health _health;
 
     private Dictionary<string, Attack> _attackList = new Dictionary<string, Attack>();
     private int _stun;
@@ -21,7 +21,7 @@ public class ActionController : MonoBehaviour, IAttackInput
     private bool _attackStartedInTheAir;
 
     private int _attackActiveAfter;
-    private delegate void TurnOnHitboxFunc(Action<List<float>, int[]> Generate);
+    private delegate void TurnOnHitboxFunc(Action<List<float>, float[]> Generate);
     private TurnOnHitboxFunc _TurnOnHitbox;
 
     public bool LightAttackCheck()
@@ -49,6 +49,7 @@ public class ActionController : MonoBehaviour, IAttackInput
 
         _player = GetComponent<Player>();
         _animationController = GetComponent<AttackAnimation>();
+        _health = GetComponent<Health>();
     }
 
     public void Start()
@@ -137,7 +138,7 @@ public class ActionController : MonoBehaviour, IAttackInput
         _TurnOnHitbox = attack.TurnOnHitbox;
     }
 
-    private void GenerateHitbox(List<float> dimensions, params int[] attackFrames)
+    private void GenerateHitbox(List<float> dimensions, params float[] attackFrames)
     {
         GameObject hitbox = Instantiate(_baseHitbox, _player.transform.position, _player.transform.rotation);
         hitbox.GetComponent<BoxCollider2D>().offset = new Vector2(dimensions[0], dimensions[1]);
@@ -145,16 +146,18 @@ public class ActionController : MonoBehaviour, IAttackInput
         setHitboxData(out hitbox.GetComponent<Hitbox>()._activeFrames,
             out hitbox.GetComponent<Hitbox>()._hitStun,
             out hitbox.GetComponent<Hitbox>()._blockStun,
+            out hitbox.GetComponent<Hitbox>()._damage,
             attackFrames);
         hitbox.tag = gameObject.tag;
         hitbox.transform.localScale = new Vector2(_player._orientationController.getOrientation() ? -1 : 1, 1);
     }
 
-    private void setHitboxData(out int activeFrames, out int hitStun, out int blockStun, params int[] attackDrames)
+    private void setHitboxData(out int activeFrames, out int hitStun, out int blockStun, out float damage, params float[] attackData)
     {
-        activeFrames = attackDrames[0];
-        hitStun = attackDrames[1];
-        blockStun = attackDrames[2];
+        activeFrames = (int)attackData[0];
+        hitStun = (int)attackData[1];
+        blockStun = (int)attackData[2];
+        damage = attackData[3];
     }
 
     private int GetStunTotalDuration(string attackName)
@@ -167,12 +170,13 @@ public class ActionController : MonoBehaviour, IAttackInput
         return _playerState == State.Neutral;
     }
 
-    public void GetHit(int hitStun, int blockStun)
+    public void GetHit(int hitStun, int blockStun, float damage)
     {
         _stun = hitStun;
         _playerState = State.Hit;
         _animationController.PlayHitAnimation();
         _attackActiveAfter = -1;
+        _health.hit(damage);
     }
 
 #if UNITY_EDITOR

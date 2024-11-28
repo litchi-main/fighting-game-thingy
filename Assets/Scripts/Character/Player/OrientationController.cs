@@ -38,6 +38,16 @@ public class OrientationController : MonoBehaviour
             _movementController.SwapWalkSpeeds();
         }
         _prevOrientation = Orientation;
+        if (Orientation)
+        {
+            if (_player.transform.position.x < _player.opponent.transform.position.x)
+                SwapOrientation();
+        }
+        else
+        {
+            if (_player.transform.position.x > _player.opponent.transform.position.x)
+                SwapOrientation();
+        }
     }
 
     public void SwapOrientation()
