@@ -14,6 +14,7 @@ public class ActionController : MonoBehaviour, IAttackInput
     [SerializeField] private GameObject _baseHitbox;
     [SerializeField] private AttackAnimation _animationController;
     [SerializeField] private Health _health;
+    [SerializeField] private Block _blockController;
 
     private Dictionary<string, Attack> _attackList = new Dictionary<string, Attack>();
     private int _stun;
@@ -143,7 +144,7 @@ public class ActionController : MonoBehaviour, IAttackInput
         GameObject hitbox = Instantiate(_baseHitbox, _player.transform.position, _player.transform.rotation);
         hitbox.GetComponent<BoxCollider2D>().offset = new Vector2(dimensions[0], dimensions[1]);
         hitbox.GetComponent<BoxCollider2D>().size = new Vector2(dimensions[2], dimensions[3]);
-        setHitboxData(out hitbox.GetComponent<Hitbox>()._activeFrames,
+        SetHitboxData(out hitbox.GetComponent<Hitbox>()._activeFrames,
             out hitbox.GetComponent<Hitbox>()._hitStun,
             out hitbox.GetComponent<Hitbox>()._blockStun,
             out hitbox.GetComponent<Hitbox>()._damage,
@@ -152,7 +153,7 @@ public class ActionController : MonoBehaviour, IAttackInput
         hitbox.transform.localScale = new Vector2(_player._orientationController.getOrientation() ? -1 : 1, 1);
     }
 
-    private void setHitboxData(out int activeFrames, out int hitStun, out int blockStun, out float damage, params float[] attackData)
+    private void SetHitboxData(out int activeFrames, out int hitStun, out int blockStun, out float damage, params float[] attackData)
     {
         activeFrames = (int)attackData[0];
         hitStun = (int)attackData[1];
@@ -172,11 +173,24 @@ public class ActionController : MonoBehaviour, IAttackInput
 
     public void GetHit(int hitStun, int blockStun, float damage)
     {
-        _stun = hitStun;
-        _playerState = State.Hit;
-        _animationController.PlayHitAnimation();
-        _attackActiveAfter = -1;
-        _health.hit(damage);
+        if ((_playerState == State.Neutral
+            || _playerState == State.Blocking)
+            && _blockController.CheckIfBlocking())
+        {
+            _stun = blockStun;
+            _playerState = State.Blocking;
+            _animationController.PlayBlockAnimation();
+            _attackActiveAfter = -1;
+            _health.hit(damage / 8f);
+        }
+        else
+        {
+            _stun = hitStun;
+            _playerState = State.Hit;
+            _animationController.PlayHitAnimation();
+            _attackActiveAfter = -1;
+            _health.hit(damage);
+        }
     }
 
 #if UNITY_EDITOR

@@ -408,6 +408,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/Scripts/Camera/CameraController.cs"
 "Assets/Scripts/Camera/CameraResolution.cs"
+"Assets/Scripts/Camera/UI/HealthBar.cs"
 "Assets/Scripts/Character/Global/GravityController.cs"
 "Assets/Scripts/Character/Player/Action/ActionController.cs"
 "Assets/Scripts/Character/Player/Action/Attack.cs"
@@ -416,9 +417,8 @@
 "Assets/Scripts/Character/Player/Action/IAttackInput.cs"
 "Assets/Scripts/Character/Player/Collision/CollisionWithCameraBounds.cs"
 "Assets/Scripts/Character/Player/Collision/CollisionWithPlayers.cs"
-"Assets/Scripts/Character/Player/Collision/PixelToUnitConverter.cs"
+"Assets/Scripts/Character/Player/Defense/Block.cs"
 "Assets/Scripts/Character/Player/Defense/Health.cs"
-"Assets/Scripts/Character/Player/Defense/HealthBar.cs"
 "Assets/Scripts/Character/Player/Defense/Hurtbox.cs"
 "Assets/Scripts/Character/Player/Movement/AirMovement.cs"
 "Assets/Scripts/Character/Player/Movement/HorizontalMovement.cs"
@@ -426,6 +426,7 @@
 "Assets/Scripts/Character/Player/Movement/MovementAnimation.cs"
 "Assets/Scripts/Character/Player/OrientationController.cs"
 "Assets/Scripts/FPSLimiter.cs"
+"Assets/Scripts/PixelToUnitConverter.cs"
 "Assets/Scripts/Player.cs"
 -langversion:9.0
 

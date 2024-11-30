@@ -8,16 +8,18 @@ public class Health : MonoBehaviour
 
     public delegate void HealthCallback(float prevHealth, float diff);
     private event HealthCallback healthChanged;
-    private event EventHandler healthEnded;
+    public delegate void GameEndCallback();
+    private event GameEndCallback healthEnded;
     private float currentHealth;
     void Start()
     {
         currentHealth = _baseHealth;
+        healthEnded += CloseGame;
     }
 
-    void showHp()
+    private void CloseGame()
     {
-        Debug.Log(gameObject.tag + " " + currentHealth);
+        Application.Quit();
     }
 
     public void hit(float amount)
@@ -26,7 +28,7 @@ public class Health : MonoBehaviour
         currentHealth -= amount;
 
         if (currentHealth <= 0)
-            healthEnded?.Invoke(this, EventArgs.Empty);
+            healthEnded?.Invoke();
     }
 
     public void addHealthChangedEvent(HealthCallback function)

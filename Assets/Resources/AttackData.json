@@ -5,7 +5,7 @@
     "active": 2,
     "recovery": 9,
     "hitstun": 12,
-    "blockstun": 6,
+    "blockstun": 9,
     "damage": 10,
     "hitBoxDimensions": [
 
@@ -22,7 +22,7 @@
     "active": 4,
     "recovery": 17,
     "hitstun": 19,
-    "blockstun": 10,
+    "blockstun": 14,
     "damage": 10,
     "hitBoxDimensions": [
 
@@ -39,7 +39,7 @@
     "active": 3,
     "recovery": 10,
     "hitstun": 20,
-    "blockstun": 2,
+    "blockstun": 5,
     "damage": 10,
     "hitBoxDimensions": [
 
@@ -56,7 +56,7 @@
     "active": 5,
     "recovery": 25,
     "hitstun": 29,
-    "blockstun": 10,
+    "blockstun": 18,
     "damage": 10,
     "hitBoxDimensions": [
 

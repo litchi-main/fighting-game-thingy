@@ -43,6 +43,11 @@ public class AttackAnimation : MonoBehaviour, IAttackInput
         _animator.SetTrigger("Got hit");
     }
 
+    public void PlayBlockAnimation()
+    {
+        _animator.SetTrigger("Blocking");
+    }
+
 #if UNITY_EDITOR
     [ContextMenu(nameof(TryGetComponents))]
     protected void TryGetComponents()

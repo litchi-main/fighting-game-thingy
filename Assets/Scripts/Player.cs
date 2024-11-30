@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     [field: SerializeField] public KeyCode LeftKey { get; protected set; }
     [field: SerializeField] public KeyCode RightKey { get; protected set; }
     [field: SerializeField] public KeyCode JumpKey { get; protected set; }
-    [field: SerializeField] public KeyCode ManualOrientSwitch { get; protected set; } //delete later
     [field: SerializeField] public KeyCode LightAttackKey { get; protected set; }
     [field: SerializeField] public KeyCode HeavyAttackKey { get; protected set; }
 
@@ -28,13 +27,6 @@ public class Player : MonoBehaviour
         _gravityController = GetComponent<GravityController>();
         _animator = GetComponent<Animator>();
         _orientationController = GetComponent<OrientationController>();
-    }
-
-    private void Update()
-    {
-        bool swapInput = Input.GetKeyDown(ManualOrientSwitch);
-        if (swapInput)
-            _orientationController.SwapOrientation();
     }
 
 #if UNITY_EDITOR
