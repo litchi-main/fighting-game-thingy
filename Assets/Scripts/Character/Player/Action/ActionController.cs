@@ -14,7 +14,7 @@ public class ActionController : MonoBehaviour, IAttackInput
     [SerializeField] private GameObject _baseHitbox;
     [SerializeField] private AttackAnimation _animationController;
     [SerializeField] private Health _health;
-    [SerializeField] private Block _blockController;
+    [SerializeField] private BlockController _blockController;
 
     private Dictionary<string, Attack> _attackList = new Dictionary<string, Attack>();
     private int _stun;

@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\dangs\\fighting game thingy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|c:\\users\\dangs\\fighting game thingy\\assets\\scripts\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|c:\\users\\dangs\\fighting game thingy\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\movement\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\movement\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\defense\\blockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\defense\\blockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\defense\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\defense\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +27,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Resources\\AttackData.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|c:\\users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\movement\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\movement\\horizontalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\action\\attackanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\action\\attackanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\action\\actioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\action\\actioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|c:\\users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\defense\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\player\\defense\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\orientationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,8 +87,8 @@
       "RelativeMoniker": "D:0:0:{0B23BF20-9769-E760-A9B8-C2EC50DF81FE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\character\\global\\gravitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dangs\\fighting game thingy\\assets\\scripts\\character\\player\\collision\\pixeltounitconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\character\\player\\collision\\pixeltounitconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Collision\\PixelToUnitConverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Character\\Player\\Collision\\PixelToUnitConverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,37 +98,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Block.cs",
-              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\Block.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Defense\\Block.cs",
-              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\Block.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Defense\\Block.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T16:22:28.498Z",
+              "WhenOpened": "2024-12-01T13:24:09.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Menus\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menus\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Menus\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menus\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T13:02:34.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "HealthBar.cs",
-              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
-              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T15:14:47.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ActionController.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Action\\ActionController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Action\\ActionController.cs",
@@ -128,12 +136,48 @@
               "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Action\\ActionController.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAAAAALQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:45:11.602Z",
+              "WhenOpened": "2024-11-26T21:45:11.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HorizontalMovement.cs",
+              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
+              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T21:46:21.683Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "HealthBar.cs",
+              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
+              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Camera\\UI\\HealthBar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T15:14:47.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BlockController.cs",
+              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\BlockController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Defense\\BlockController.cs",
+              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\BlockController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Defense\\BlockController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-30T16:22:28.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Hitbox.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Action\\Hitbox.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Action\\Hitbox.cs",
@@ -145,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "OrientationController.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\OrientationController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\OrientationController.cs",
@@ -153,25 +197,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\OrientationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:46:38.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T21:46:38.642Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HorizontalMovement.cs",
-              "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
-              "ToolTip": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Movement\\HorizontalMovement.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAswD4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:46:21.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "AttackAnimation.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Action\\AttackAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Action\\AttackAnimation.cs",
@@ -179,12 +209,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Action\\AttackAnimation.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAgwB8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:45:27.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T21:45:27.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "AttackData.json",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Resources\\AttackData.json",
               "RelativeDocumentMoniker": "Assets\\Resources\\AttackData.json",
@@ -197,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Defense\\Health.cs",
@@ -205,12 +234,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Character\\Player\\Defense\\Health.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T21:46:05.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T21:46:05.097Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AirMovement.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\AirMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Movement\\AirMovement.cs",
@@ -222,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "CollisionWithCameraBounds.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Collision\\CollisionWithCameraBounds.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Collision\\CollisionWithCameraBounds.cs",
@@ -234,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "MovementAnimation.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\MovementAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Movement\\MovementAnimation.cs",
@@ -246,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "FPSLimiter.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\FPSLimiter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FPSLimiter.cs",
@@ -258,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "IMovementInput.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Movement\\IMovementInput.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Movement\\IMovementInput.cs",
@@ -270,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "HealthBar.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\HealthBar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Defense\\HealthBar.cs",
@@ -281,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Hurtbox.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Defense\\Hurtbox.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Defense\\Hurtbox.cs",
@@ -293,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "PixelToUnitConverter.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Collision\\PixelToUnitConverter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Collision\\PixelToUnitConverter.cs",
@@ -305,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "IAttackInput.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Action\\IAttackInput.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Action\\IAttackInput.cs",
@@ -317,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Attack.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Player\\Action\\Attack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Player\\Action\\Attack.cs",
@@ -329,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "GravityController.cs",
               "DocumentMoniker": "C:\\Users\\dangs\\fighting game thingy\\Assets\\Scripts\\Character\\Global\\GravityController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Character\\Global\\GravityController.cs",
