@@ -5,35 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(ActionController))]
 
 
-public class AttackAnimation : MonoBehaviour, IAttackInput
+public class AttackAnimation : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] private Player _player;
     [SerializeField] private Animator _animator;
     [SerializeField] private ActionController _actionController;
 
-    public bool LightAttackCheck()
-    {
-        return Input.GetKeyDown(_player.LightAttackKey);
-    }
-    
-    public bool HeavyAttackCheck()
-    {
-        return Input.GetKeyDown(_player.HeavyAttackKey);
-    }
+    private BaseInputReader _inputSource;
+    private GenericInputReader _inputReader;
 
     private void Awake()
     {
         _player = GetComponent<Player>();
-        _animator = GetComponent<Animator>();
-        _actionController = GetComponent<ActionController>();
-    }
+        _animator = _player.animator;
+        _actionController = _player.actionController;
+        _inputSource = _player.inputSource;
+        _inputReader = _player.inputReader;
+}
 
     private void Update()
     {
-        if (LightAttackCheck())
+        if (_inputReader.getAttackInput(_inputSource)[0])
             _animator.SetTrigger("n.L");
-        else if (HeavyAttackCheck())
+        else if (_inputReader.getAttackInput(_inputSource)[0])
             _animator.SetTrigger("n.H");
         _animator.SetBool("In Neutral", _actionController.IsInNeutral());
     }

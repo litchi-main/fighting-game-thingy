@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(HorizontalMovement))]
 [RequireComponent(typeof(ActionController))]
 
-public class AirMovement : MonoBehaviour, IMovementInput
+public class AirMovement : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] public float jumpForce = 14f;
@@ -16,52 +16,37 @@ public class AirMovement : MonoBehaviour, IMovementInput
     [SerializeField] public ActionController _actionController;
     [SerializeField] public Player _player;
 
+    private BaseInputReader _inputSource;
+    private GenericInputReader _inputReader;
+
     private Vector2 _Velocity;
     private int _jumpsLeft;
 
     private void Awake()
     {
-        _gravityController = GetComponent<GravityController>();
-        _horizontalMovementController = GetComponent<HorizontalMovement>();
-        _actionController = GetComponent<ActionController>();
         _player = GetComponent<Player>();
+        _gravityController = _player.gravityController;
+        _horizontalMovementController = _player.horizontalMovementController;
+        _actionController = _player.actionController;
+        _inputSource = _player.inputSource;
+        _inputReader = _player.inputReader;
     }
 
     private void Start()
     {
         RefreshJumps();
     }
-    public float UDMovement()
-    {
-        float temp = 0f;
-        if (Input.GetKeyDown(_player.JumpKey))
-            temp++;
-
-        return temp;
-    }
-    public float LRMovement()
-    {
-        float temp = 0f;
-        if (Input.GetKey(_player.LeftKey))
-            temp--;
-        if (Input.GetKey(_player.RightKey))
-            temp++;
-
-        return temp;
-    }
 
     private void Update()
     {
-        float input = UDMovement();
-
         if ((_gravityController.IsGrounded
             || _jumpsLeft > 0)
             && _actionController.IsInNeutral())
         {
-            if (input == 1f)
+            if (_inputReader.getDirectionalInput(_inputSource)[1] > 0f)
             {
                 int jumpStrength = maxAirJumps - _jumpsLeft;
-                _Velocity.Set(LRMovement() * (_jumpHorizontalVelocity - jumpStrength), 0);
+                _Velocity.Set(_inputReader.getDirectionalInput(_inputSource)[0] * (_jumpHorizontalVelocity - jumpStrength), 0);
                 _gravityController.SetVelocity(jumpForce);
                 if (_gravityController.IsGrounded)
                     RefreshJumps();

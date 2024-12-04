@@ -10,6 +10,11 @@ public class CollisionWithCameraBounds : MonoBehaviour
     private float leftSideBound;
     private float rightSideBound;
 
+    private void Start()
+    {
+        _camera = GetComponentInParent<Player>().mainCamera;
+    }
+
     void Update()
     {
         leftSideBound = _camera.transform.position.x - Screen.width / _pixelToUnitConverter.WorldToPixelAmount.x / 2f;

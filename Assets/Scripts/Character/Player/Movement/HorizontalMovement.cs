@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(ActionController))]
 [RequireComponent(typeof(Player))]
 
-public class HorizontalMovement : MonoBehaviour, IMovementInput
+public class HorizontalMovement : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField, Min(0.5f)] private float _walkLeftSpeed = 5f;
@@ -16,40 +16,24 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
     [SerializeField] private ActionController _actionController;
     [SerializeField] private Player _player;
 
+    private BaseInputReader _inputSource;
+    private GenericInputReader _inputReader;
+
     private Vector2 _xVelocityFinal { get; set; }
     private Vector2 _xVelocityAdditive { get; set; }
-    private Vector2 _velocityInput;
     private float _characterRadius;
     private bool _isplayeronme;
 
     private void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
-        _gravityController = GetComponent<GravityController>();
-        _actionController = GetComponent<ActionController>();
         _player = GetComponent<Player>();
+        _characterController = _player.characterController;
+        _gravityController = _player.gravityController;
+        _actionController = _player.actionController;
+        _inputSource = _player.inputSource;
+        _inputReader = _player.inputReader;
         _characterRadius = _characterController.radius;
         _isplayeronme = false;
-    }
-
-    private void Start()
-    {
-        _velocityInput = Vector2.zero;
-    }
-
-    public float LRMovement()
-    {
-        float temp = 0f;
-        if (Input.GetKey(_player.LeftKey))
-            temp--;
-        if (Input.GetKey(_player.RightKey))
-            temp++;
-
-        return temp;
-    }
-    public float UDMovement()
-    {
-        return 0f;
     }
 
     private void Update()
@@ -62,10 +46,10 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
 
         _xVelocityFinal = Vector2.zero;
 
-        _velocityInput.Set(LRMovement(), UDMovement());
+        int _velocityInput = _inputReader.getDirectionalInput(_inputSource)[0];
         if (_gravityController.IsGrounded)
             if (_actionController.IsInNeutral())
-                _xVelocityFinal = (_velocityInput.x > 0 ? _walkRightSpeed : _walkLeftSpeed) * _velocityInput;
+                _xVelocityFinal = (_velocityInput > 0 ? _walkRightSpeed : _walkLeftSpeed) * new Vector2(_velocityInput, 0);
 
         _xVelocityFinal += _xVelocityAdditive;
 
@@ -109,11 +93,6 @@ public class HorizontalMovement : MonoBehaviour, IMovementInput
     public Vector2 GetFullVelocity()
     {
         return _xVelocityFinal + _xVelocityAdditive;
-    }
-
-    public Vector2 GetVelocityInput()
-    {
-        return _velocityInput;
     }
 
 #if UNITY_EDITOR

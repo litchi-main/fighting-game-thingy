@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Player))]
 
-public class MovementAnimation : MonoBehaviour, IMovementInput
+public class MovementAnimation : MonoBehaviour
 { 
     [Header("Params")]
     [SerializeField] private Animator _animator;
@@ -13,37 +13,22 @@ public class MovementAnimation : MonoBehaviour, IMovementInput
     private Func<float, bool> running = (a) => a > 0f;
     private Func<float, bool> walkingBack = (a) => a < 0f;
 
-    public float LRMovement()
-    {
-        float temp = 0f;
-        if (Input.GetKey(_player.LeftKey))
-            temp--;
-        if (Input.GetKey(_player.RightKey))
-            temp++;
-
-        return temp;
-    }
-
-    public float UDMovement()
-    {
-        float temp = 0f;
-        if (Input.GetKeyDown(_player.JumpKey))
-            temp++;
-
-        return temp;
-    }
+    private BaseInputReader _inputSource;
+    private GenericInputReader _inputReader;
 
     private void Awake()
     {
         _player = GetComponent<Player>();
-        _animator = GetComponent<Animator>();
+        _animator = _player.animator;
+        _inputSource = _player.inputSource;
+        _inputReader = _player.inputReader;
     }
 
     private void Update()
     {
-        _animator.SetBool("Running", running(LRMovement()));
-        _animator.SetBool("Walking back", walkingBack(LRMovement()));
-        _animator.SetBool("Grounded", _player._gravityController.IsGrounded);
+        _animator.SetBool("Running", running(_inputReader.getDirectionalInput(_inputSource)[0]));
+        _animator.SetBool("Walking back", walkingBack(_inputReader.getDirectionalInput(_inputSource)[0]));
+        _animator.SetBool("Grounded", _player.gravityController.IsGrounded);
     }
 
     public void SwapWalkAnimations()

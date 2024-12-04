@@ -8,35 +8,46 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [field: Header("Components")]
-    [field: SerializeField] public CharacterController _characterController { get; protected set; }
-    [field: SerializeField] public GravityController _gravityController { get; protected set; }
-    [field: SerializeField] public Animator _animator { get; protected set; }
-    [field: SerializeField] public OrientationController _orientationController { get; protected set; }
+    [field: SerializeField] public CharacterController characterController { get; protected set; }
+    [field: SerializeField] public GravityController gravityController { get; protected set; }
+    [field: SerializeField] public HorizontalMovement horizontalMovementController { get; protected set; }
+    [field: SerializeField] public AirMovement airMovementController { get; protected set; }
+    [field: SerializeField] public ActionController actionController { get; protected set; }
+    [field: SerializeField] public Animator animator { get; protected set; }
+    [field: SerializeField] public AttackAnimation attackAnimator { get; protected set; }
+    [field: SerializeField] public MovementAnimation movementAnimator { get; protected set; }
+    [field: SerializeField] public OrientationController orientationController { get; protected set; }
     [field: SerializeField] public bool baseOrientation { get; protected set; }
     [field: SerializeField] public Player opponent { get; protected set; }
-
-    [field: SerializeField] public KeyCode LeftKey { get; protected set; }
-    [field: SerializeField] public KeyCode RightKey { get; protected set; }
-    [field: SerializeField] public KeyCode JumpKey { get; protected set; }
-    [field: SerializeField] public KeyCode LightAttackKey { get; protected set; }
-    [field: SerializeField] public KeyCode HeavyAttackKey { get; protected set; }
+    [field: SerializeField] public GenericInputReader inputReader { get; protected set; }
+    [field: SerializeField] public BaseInputReader inputSource { get; protected set; }
+    [field: SerializeField] public Health healthPoints { get; protected set; }
+    [field: SerializeField] public Camera mainCamera { get; protected set; }
 
     private void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
-        _gravityController = GetComponent<GravityController>();
-        _animator = GetComponent<Animator>();
-        _orientationController = GetComponent<OrientationController>();
+        characterController = GetComponent<CharacterController>();
+        gravityController = GetComponent<GravityController>();
+        horizontalMovementController = GetComponent<HorizontalMovement>();
+        airMovementController = GetComponent<AirMovement>();
+        actionController = GetComponent<ActionController>();
+        animator = GetComponent<Animator>();
+        attackAnimator = GetComponent<AttackAnimation>();
+        movementAnimator = GetComponent<MovementAnimation>();
+        orientationController = GetComponent<OrientationController>();
+        inputReader = GetComponent<GenericInputReader>();
+        inputSource = GetComponent<BaseInputReader>();
+        healthPoints = GetComponent<Health>();
     }
 
 #if UNITY_EDITOR
     [ContextMenu(nameof(TryGetComponents))]
     protected void TryGetComponents()
     {
-        _characterController = GetComponent<CharacterController>();
-        _gravityController = GetComponent<GravityController>();
-        _animator = GetComponent<Animator>();
-        _orientationController = GetComponent<OrientationController>();
+        characterController = GetComponent<CharacterController>();
+        gravityController = GetComponent<GravityController>();
+        animator = GetComponent<Animator>();
+        orientationController = GetComponent<OrientationController>();
     }
 #endif
 }

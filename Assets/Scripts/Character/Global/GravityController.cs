@@ -13,11 +13,13 @@ public class GravityController : MonoBehaviour
     [SerializeField] private float _minVelocity = -200f;
 
     [Header("Components")]
+    [SerializeField] private Player _player;
     [SerializeField] private CharacterController _characterController;
 
     private void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
+        _player = GetComponent<Player>();
+        _characterController = _player.characterController;
     }
 
     private void Start()

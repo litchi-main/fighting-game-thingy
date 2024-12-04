@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(AttackAnimation))]
 
-public class ActionController : MonoBehaviour, IAttackInput
+public class ActionController : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] private Player _player;
@@ -15,6 +15,9 @@ public class ActionController : MonoBehaviour, IAttackInput
     [SerializeField] private AttackAnimation _animationController;
     [SerializeField] private Health _health;
     [SerializeField] private BlockController _blockController;
+
+    private BaseInputReader _inputSource;
+    private GenericInputReader _inputReader;
 
     private Dictionary<string, Attack> _attackList = new Dictionary<string, Attack>();
     private int _stun;
@@ -24,16 +27,6 @@ public class ActionController : MonoBehaviour, IAttackInput
     private int _attackActiveAfter;
     private delegate void TurnOnHitboxFunc(Action<List<float>, float[]> Generate);
     private TurnOnHitboxFunc _TurnOnHitbox;
-
-    public bool LightAttackCheck()
-    {
-        return Input.GetKeyDown(_player.LightAttackKey);
-    }
-
-    public bool HeavyAttackCheck()
-    {
-        return Input.GetKeyDown(_player.HeavyAttackKey);
-    }
 
     private void Awake()
     {
@@ -49,8 +42,10 @@ public class ActionController : MonoBehaviour, IAttackInput
         }
 
         _player = GetComponent<Player>();
-        _animationController = GetComponent<AttackAnimation>();
-        _health = GetComponent<Health>();
+        _animationController = _player.attackAnimator;
+        _health = _player.healthPoints;
+        _inputSource = _player.inputSource;
+        _inputReader = _player.inputReader;
     }
 
     public void Start()
@@ -80,7 +75,7 @@ public class ActionController : MonoBehaviour, IAttackInput
 
 
             if (_attackStartedInTheAir
-                && _player._gravityController.IsGrounded
+                && _player.gravityController.IsGrounded
                 && _playerState == State.Attacking)
             {
                 _stun = 0;
@@ -89,8 +84,8 @@ public class ActionController : MonoBehaviour, IAttackInput
         else
         {
             _playerState = State.Neutral;
-            _attackStartedInTheAir = !_player._gravityController.IsGrounded;
-            switch (LightAttackCheck())
+            _attackStartedInTheAir = !_player.gravityController.IsGrounded;
+            switch (_inputReader.getAttackInput(_inputSource)[0])
             {
                 case bool i when i == true:
                     _playerState = State.Attacking;
@@ -109,7 +104,7 @@ public class ActionController : MonoBehaviour, IAttackInput
                 default:
                     break;
             }
-            switch (HeavyAttackCheck())
+            switch (_inputReader.getAttackInput(_inputSource)[1])
             {
                 case bool i when i == true:
                     _playerState = State.Attacking;
@@ -150,7 +145,7 @@ public class ActionController : MonoBehaviour, IAttackInput
             out hitbox.GetComponent<Hitbox>()._damage,
             attackFrames);
         hitbox.tag = gameObject.tag;
-        hitbox.transform.localScale = new Vector2(_player._orientationController.getOrientation() ? -1 : 1, 1);
+        hitbox.transform.localScale = new Vector2(_player.orientationController.getOrientation() ? -1 : 1, 1);
     }
 
     private void SetHitboxData(out int activeFrames, out int hitStun, out int blockStun, out float damage, params float[] attackData)

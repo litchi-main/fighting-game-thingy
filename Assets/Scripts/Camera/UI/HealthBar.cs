@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 public class HealthBar : MonoBehaviour
 {
     [Header("Params")]
+    [SerializeField] private Player _player;
     [SerializeField] private Camera _camera;
     [SerializeField] private Color _healthBarColor;
     [SerializeField] private Health _health;
@@ -17,7 +18,9 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        _health = GetComponent<Health>();
+        _player = GetComponent<Player>();
+        _camera = _player.mainCamera;
+        _health = _player.healthPoints;
         _health.addHealthChangedEvent(OnHit);
 
         _relativePosToCamera = _leftOrRight

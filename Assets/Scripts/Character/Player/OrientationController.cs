@@ -24,8 +24,8 @@ public class OrientationController : MonoBehaviour
     private void Awake()
     {
         _player = GetComponent<Player>();
-        _animationController = GetComponent<MovementAnimation>();
-        _movementController = GetComponent<HorizontalMovement>();
+        _animationController = _player.movementAnimator;
+        _movementController = _player.horizontalMovementController;
         Orientation = _player.baseOrientation;
     }
 
