@@ -19,9 +19,9 @@
   {
     "name": "n.H",
     "startup": 13,
-    "active": 4,
-    "recovery": 17,
-    "hitstun": 19,
+    "active": 3,
+    "recovery": 16,
+    "hitstun": 21,
     "blockstun": 14,
     "damage": 10,
     "hitBoxDimensions": [

@@ -48,7 +48,7 @@ public class Hitbox : MonoBehaviour
         {
 
         }
-        TurnHitboxOff();
+        //TurnHitboxOff();
     }
 
     public void TurnHitboxOff()

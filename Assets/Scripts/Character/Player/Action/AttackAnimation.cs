@@ -28,7 +28,7 @@ public class AttackAnimation : MonoBehaviour
     {
         if (_inputReader.getAttackInput(_inputSource)[0])
             _animator.SetTrigger("n.L");
-        else if (_inputReader.getAttackInput(_inputSource)[0])
+        else if (_inputReader.getAttackInput(_inputSource)[1])
             _animator.SetTrigger("n.H");
         _animator.SetBool("In Neutral", _actionController.IsInNeutral());
     }
@@ -41,6 +41,11 @@ public class AttackAnimation : MonoBehaviour
     public void PlayBlockAnimation()
     {
         _animator.SetTrigger("Blocking");
+    }
+
+    public void ForceIntoNeutral()
+    {
+        _animator.SetBool("In Neutral", true);
     }
 
 #if UNITY_EDITOR

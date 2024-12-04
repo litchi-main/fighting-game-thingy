@@ -420,6 +420,7 @@
 "Assets/Scripts/Character/Player/Defense/Health.cs"
 "Assets/Scripts/Character/Player/Defense/Hurtbox.cs"
 "Assets/Scripts/Character/Player/InputMethods/BaseInputReader.cs"
+"Assets/Scripts/Character/Player/InputMethods/CPUInputController.cs"
 "Assets/Scripts/Character/Player/InputMethods/GenericInputReader.cs"
 "Assets/Scripts/Character/Player/InputMethods/IInpurReader.cs"
 "Assets/Scripts/Character/Player/InputMethods/PlayerInputController.cs"

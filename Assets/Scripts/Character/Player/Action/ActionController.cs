@@ -59,7 +59,7 @@ public class ActionController : MonoBehaviour
 
     private void Update()
     {
-        if (_stun > 0)
+        if (_stun > 1)
         {
             _stun--;
 
@@ -84,47 +84,51 @@ public class ActionController : MonoBehaviour
         else
         {
             _playerState = State.Neutral;
-            _attackStartedInTheAir = !_player.gravityController.IsGrounded;
-            switch (_inputReader.getAttackInput(_inputSource)[0])
+            if (_stun == 1)
+                _stun = 0;
+            else
             {
-                case bool i when i == true:
-                    _playerState = State.Attacking;
-                    switch (!_attackStartedInTheAir)
-                    {
-                        case bool j when j == true:
-                            DoAttack(_attackList["n.L"]);
-                            break;
-                        case bool j when j == false:
-                            DoAttack(_attackList["j.L"]);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-            }
-            switch (_inputReader.getAttackInput(_inputSource)[1])
-            {
-                case bool i when i == true:
-                    _playerState = State.Attacking;
-                    switch (!_attackStartedInTheAir)
-                    {
-                        case bool j when j == true:
-                            DoAttack(_attackList["n.H"]);
-                            break;
-                        case bool j when j == false:
-                            DoAttack(_attackList["j.H"]);
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
+                _attackStartedInTheAir = !_player.gravityController.IsGrounded;
+                switch (_inputReader.getAttackInput(_inputSource)[0])
+                {
+                    case bool i when i == true:
+                        _playerState = State.Attacking;
+                        switch (!_attackStartedInTheAir)
+                        {
+                            case bool j when j == true:
+                                DoAttack(_attackList["n.L"]);
+                                break;
+                            case bool j when j == false:
+                                DoAttack(_attackList["j.L"]);
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                switch (_inputReader.getAttackInput(_inputSource)[1])
+                {
+                    case bool i when i == true:
+                        _playerState = State.Attacking;
+                        switch (!_attackStartedInTheAir)
+                        {
+                            case bool j when j == true:
+                                DoAttack(_attackList["n.H"]);
+                                break;
+                            case bool j when j == false:
+                                DoAttack(_attackList["j.H"]);
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
         }
-
     }
 
     private void DoAttack(Attack attack)

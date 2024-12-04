@@ -168,6 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFrameRate: 60
+--- !u!1 &135120837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6059968075417497656, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+  m_PrefabInstance: {fileID: 1630347340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456419934
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,12 +617,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6059968077435601611, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
   m_PrefabInstance: {fileID: 1630347340}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 135120837}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1736274cc2c0ba54a8a670889667c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &684349921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135120837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50433fa0a77958f44b02aff17354c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
 --- !u!1 &1205513902
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +749,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 6059968075838162065, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_TagString
+      value: P2
+      objectReference: {fileID: 0}
     - target: {fileID: 6059968077435601607, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
       propertyPath: _camera
       value: 
@@ -763,6 +785,10 @@ PrefabInstance:
       propertyPath: <mainCamera>k__BackingField
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 6059968077435601611, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: <inputSource>k__BackingField
+      value: 
+      objectReference: {fileID: 684349921}
     - target: {fileID: 6059968077435601611, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
       propertyPath: <baseOrientation>k__BackingField
       value: 1
@@ -835,11 +861,16 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 6522573712117771670, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
+      propertyPath: m_TagString
+      value: P2
+      objectReference: {fileID: 0}
     - target: {fileID: 6522573712117771681, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 519420028}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6059968077435601642, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
 --- !u!1001 &1805503312
 PrefabInstance:
