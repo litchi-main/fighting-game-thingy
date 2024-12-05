@@ -23,7 +23,7 @@ public class Player : MonoBehaviour, ICloneable
     [field: SerializeField] public GenericInputReader inputReader { get; protected set; }
     [field: SerializeField] public BaseInputReader inputSource { get;  set; }
     [field: SerializeField] public Health healthPoints { get; protected set; }
-    [field: SerializeField] public Camera mainCamera { get; protected set; }
+    [field: SerializeField] public Camera mainCamera { get;  set; }
 
     private void Awake()
     {

@@ -13,6 +13,8 @@ public class CollisionWithCameraBounds : MonoBehaviour
     private void Start()
     {
         _camera = GetComponentInParent<Player>().mainCamera;
+        _pixelToUnitConverter = GetComponent<PixelToUnitConverter>();
+        _pixelToUnitConverter.SetCamera(_camera.gameObject);
     }
 
     void Update()

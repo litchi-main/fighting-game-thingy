@@ -53,4 +53,9 @@ public class CameraController : MonoBehaviour
         prevCameraPos.z = zOffset;
         return prevCameraPos;
     }
+
+    public void AddPlayer(Transform player)
+    {
+        players.Add(player);
+    }
 }

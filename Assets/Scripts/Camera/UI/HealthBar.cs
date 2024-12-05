@@ -21,6 +21,7 @@ public class HealthBar : MonoBehaviour
         _player = GetComponent<Player>();
         _camera = _player.mainCamera;
         _health = _player.healthPoints;
+        _pixelToUnitConverter.SetCamera(_camera.gameObject);
         _health.addHealthChangedEvent(OnHit);
 
         _relativePosToCamera = _leftOrRight
@@ -47,5 +48,10 @@ public class HealthBar : MonoBehaviour
             ? new(-(_healthBar.transform.localScale.x - scale.x) / 2f, 0)
             : new((_healthBar.transform.localScale.x - scale.x) / 2f, 0);
         _healthBar.transform.localScale = scale;
+    }
+
+    public void setLeftOrRight(bool lor)
+    {
+        _leftOrRight = lor;
     }
 }

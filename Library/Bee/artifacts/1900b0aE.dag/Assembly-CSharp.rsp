@@ -431,6 +431,7 @@
 "Assets/Scripts/FPSLimiter.cs"
 "Assets/Scripts/Menus/FighterLoader.cs"
 "Assets/Scripts/Menus/MainMenu.cs"
+"Assets/Scripts/Menus/Rematch.cs"
 "Assets/Scripts/PixelToUnitConverter.cs"
 "Assets/Scripts/Player.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tempScene.unity
     guid: 6c4eb1774a79df94fad52544472f2a0d
+  - enabled: 1
+    path: Assets/Scenes/rematch.unity
+    guid: 78ded3729359dd34293e6f25b084c2dd
   m_configObjects: {}

@@ -8,7 +8,7 @@ public class PixelToUnitConverter : MonoBehaviour
 
     public GameObject Camera;
 
-    void Awake()
+    void Update()
     {
         WorldUnitsInCamera.y = Camera.GetComponent<Camera>().orthographicSize * 2;
         WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
@@ -17,9 +17,19 @@ public class PixelToUnitConverter : MonoBehaviour
         WorldToPixelAmount.y = Screen.height / WorldUnitsInCamera.y;
     }
 
-    void Update()
+    public void SetCamera(GameObject camera)
     {
-        WorldUnitsInCamera.y = Camera.GetComponent<Camera>().orthographicSize * 2;
+        Camera = camera;
+    }
+
+    public GameObject GetCamera()
+    {
+        return Camera;
+    }
+
+    public void ForceConversionFromCamera(Camera camera)
+    {
+        WorldUnitsInCamera.y = camera.orthographicSize * 2;
         WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
 
         WorldToPixelAmount.x = Screen.width / WorldUnitsInCamera.x;

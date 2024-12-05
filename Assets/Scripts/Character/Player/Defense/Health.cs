@@ -14,12 +14,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = _baseHealth;
-        healthEnded += CloseGame;
-    }
-
-    private void CloseGame()
-    {
-        Application.Quit();
     }
 
     public void hit(float amount)
@@ -34,5 +28,10 @@ public class Health : MonoBehaviour
     public void addHealthChangedEvent(HealthCallback function)
     {
         healthChanged += function;
+    }
+
+    public void addHealthEndedEcent(GameEndCallback function)
+    {
+        healthEnded += function;
     }
 }

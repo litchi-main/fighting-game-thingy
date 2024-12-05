@@ -434,9 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 519420031}
-  players:
-  - {fileID: 0}
-  - {fileID: 0}
+  players: []
   arena:
   - {fileID: 1205513905}
   - {fileID: 1996498695}
@@ -612,6 +610,7 @@ GameObject:
   - component: {fileID: 761555603}
   - component: {fileID: 761555602}
   - component: {fileID: 761555600}
+  - component: {fileID: 761555605}
   m_Layer: 0
   m_Name: FighterLoader
   m_TagString: Untagged
@@ -660,6 +659,8 @@ MonoBehaviour:
   _playerPrefab: {fileID: 6059968075417497656, guid: b52a18da36567594ab40b5bef8bdd639, type: 3}
   _p1HumanInputs: {fileID: 761555602}
   _p2HumanInputs: {fileID: 761555600}
+  _mainCamera: {fileID: 519420028}
+  _pixelConverter: {fileID: 761555605}
   P1: {fileID: 0}
   P2: {fileID: 0}
 --- !u!4 &761555604
@@ -677,6 +678,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761555605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761555599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d9608d499eb20449d5b88326741d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldUnitsInCamera: {x: 0, y: 0}
+  WorldToPixelAmount: {x: 0, y: 0}
+  Camera: {fileID: 519420028}
 --- !u!1 &1205513902
 GameObject:
   m_ObjectHideFlags: 0
