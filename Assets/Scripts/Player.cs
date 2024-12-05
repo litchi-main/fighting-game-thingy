@@ -40,6 +40,20 @@ public class Player : MonoBehaviour, ICloneable
         healthPoints = GetComponent<Health>();
     }
 
+    private void Start()
+    {
+        try
+        {
+            inputReader.getAttackInput(inputSource);
+            inputReader.getDirectionalInput(inputSource);
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.LogError(new NoControllerError().Message);
+            inputSource = gameObject.AddComponent<CPUInputController>();
+        }
+    }
+
 #if UNITY_EDITOR
     [ContextMenu(nameof(TryGetComponents))]
     protected void TryGetComponents()

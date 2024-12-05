@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 6059968077435601650}
   - component: {fileID: 6059968077435601651}
   - component: {fileID: 6059968077435601643}
+  - component: {fileID: 2245337720947058249}
   m_Layer: 0
   m_Name: Player1
   m_TagString: P1
@@ -40,7 +41,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6059968075417497656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.15, y: -0.23611894, z: -0.2}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -308,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 6059968077435601611}
   _camera: {fileID: 0}
-  _healthBarColor: {r: 1, g: 0.9524385, b: 0, a: 1}
+  _healthBarColor: {r: 0, g: 1, b: 0.03938818, a: 1}
   _health: {fileID: 6059968077435601606}
   _healthBar: {fileID: 7372856023421716877, guid: 9aa7a81afddeaa445b2ee6317ca8a1ec, type: 3}
   _leftOrRight: 0
@@ -355,6 +356,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb782e49e933e64e8b4cea05eeeb153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2245337720947058249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059968075417497656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b555b4a8c61c26a45afca454793b6b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 6059968077435601611}
 --- !u!1 &6059968075838162065
 GameObject:
   m_ObjectHideFlags: 0

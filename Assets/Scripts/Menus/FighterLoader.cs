@@ -9,6 +9,7 @@ public class FighterLoader : MonoBehaviour
     [SerializeField] private PlayerInputController _p2HumanInputs;
     [SerializeField] private GameObject _mainCamera;
     [SerializeField] private PixelToUnitConverter _pixelConverter;
+    [SerializeField] private Vector2 _RoundStart;
 
     public static bool whoWon;
     public GameObject P1;
@@ -30,8 +31,6 @@ public class FighterLoader : MonoBehaviour
 
         Destroy(_p1HumanInputs);
         Destroy(_p2HumanInputs);
-
-        //main camera, health bar left or right, camera in pixel converter
     }
 
     public void generateHumanPlayer(out GameObject player, bool isP1)
@@ -48,6 +47,7 @@ public class FighterLoader : MonoBehaviour
             player.tag = "P1";
             player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => FighterLoader.whoWon = true);
             player.GetComponent<HealthBar>().setLeftOrRight(false);
+            player.GetComponent<CharacterController>().Move(-_RoundStart);
         }
         else
         {
@@ -56,7 +56,7 @@ public class FighterLoader : MonoBehaviour
             player.GetComponent<Player>().baseOrientation = true;
             player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => FighterLoader.whoWon = false);
             player.GetComponent<HealthBar>().setLeftOrRight(true);
-
+            player.GetComponent<CharacterController>().Move(_RoundStart);
         }
         player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => loadRematchScreen());
         _mainCamera.GetComponent<CameraController>().AddPlayer(player.transform);
@@ -75,7 +75,7 @@ public class FighterLoader : MonoBehaviour
             player.tag = "P1";
             player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => FighterLoader.whoWon = true);
             player.GetComponent<HealthBar>().setLeftOrRight(false);
-
+            player.GetComponent<CharacterController>().Move(-_RoundStart);
         }
         else
         {
@@ -83,7 +83,7 @@ public class FighterLoader : MonoBehaviour
             player.GetComponent<Player>().baseOrientation = true;
             player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => FighterLoader.whoWon = false);
             player.GetComponent<HealthBar>().setLeftOrRight(true);
-
+            player.GetComponent<CharacterController>().Move(_RoundStart);
         }
         player.GetComponent<Player>().healthPoints.addHealthEndedEcent(() => loadRematchScreen());
         _mainCamera.GetComponent<CameraController>().AddPlayer(player.transform);

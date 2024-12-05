@@ -5,7 +5,7 @@ using UnityEngine;
 public class GravityController : MonoBehaviour
 {
     public float YVelocity {  get; private set; }
-    public bool IsGrounded {  get; private set; }
+    public bool IsGrounded {  get;  set; }
 
     [Header("Params")]
     [SerializeField] private float _gravityScale = 3f;

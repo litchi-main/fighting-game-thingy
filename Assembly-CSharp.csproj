@@ -81,6 +81,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Collision\CollisionWithPlayers.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Movement\AirMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Collision\ReturnPlayerToZero.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\FPSLimiter.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Action\ActionController.cs" />
@@ -115,9 +116,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\Menus\Rematch.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\InputMethods\NoControllerError.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Defense\Hurtbox.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\Scripts\Menus\Rematch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

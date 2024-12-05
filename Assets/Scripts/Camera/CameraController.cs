@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
         _camera = GetComponent<Camera>();
         zOffset = zOffset == default ? -5 : zOffset;
         cameraLimits = getCameraLimits();
-        _camera.transform.position = getCameraPos();
+        //_camera.transform.position = getCameraPos();
     }
 
     private Bounds getCameraLimits()
