@@ -22,7 +22,7 @@ public class AirMovement : MonoBehaviour
     private Vector2 _Velocity;
     private int _jumpsLeft;
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponent<Player>();
         _gravityController = _player.gravityController;
@@ -30,10 +30,6 @@ public class AirMovement : MonoBehaviour
         _actionController = _player.actionController;
         _inputSource = _player.inputSource;
         _inputReader = _player.inputReader;
-    }
-
-    private void Start()
-    {
         RefreshJumps();
     }
 

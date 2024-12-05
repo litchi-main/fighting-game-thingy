@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -15,7 +16,7 @@ public class AttackAnimation : MonoBehaviour
     private BaseInputReader _inputSource;
     private GenericInputReader _inputReader;
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponent<Player>();
         _animator = _player.animator;

@@ -10,6 +10,7 @@ public class CollisionWithPlayers : MonoBehaviour
     [SerializeField] private CharacterController _charController;
     private void Start()
     {
+        gameObject.tag = GetComponentInParent<Player>().gameObject.tag;
         _collider = GetComponent<BoxCollider2D>();
         _charController = GetComponentInParent<CharacterController>();
         _collider.size = new(_charController.radius * 2 + 0.5f, _collider.size.y);

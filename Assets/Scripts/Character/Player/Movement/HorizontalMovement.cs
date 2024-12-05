@@ -24,7 +24,7 @@ public class HorizontalMovement : MonoBehaviour
     private float _characterRadius;
     private bool _isplayeronme;
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponent<Player>();
         _characterController = _player.characterController;

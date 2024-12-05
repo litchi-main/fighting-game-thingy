@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -5,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(OrientationController))]
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ICloneable
 {
     [field: Header("Components")]
     [field: SerializeField] public CharacterController characterController { get; protected set; }
@@ -17,10 +18,10 @@ public class Player : MonoBehaviour
     [field: SerializeField] public AttackAnimation attackAnimator { get; protected set; }
     [field: SerializeField] public MovementAnimation movementAnimator { get; protected set; }
     [field: SerializeField] public OrientationController orientationController { get; protected set; }
-    [field: SerializeField] public bool baseOrientation { get; protected set; }
-    [field: SerializeField] public Player opponent { get; protected set; }
+    [field: SerializeField] public bool baseOrientation { get; set; }
+    [field: SerializeField] public Player opponent { get;  set; }
     [field: SerializeField] public GenericInputReader inputReader { get; protected set; }
-    [field: SerializeField] public BaseInputReader inputSource { get; protected set; }
+    [field: SerializeField] public BaseInputReader inputSource { get;  set; }
     [field: SerializeField] public Health healthPoints { get; protected set; }
     [field: SerializeField] public Camera mainCamera { get; protected set; }
 
@@ -36,7 +37,6 @@ public class Player : MonoBehaviour
         movementAnimator = GetComponent<MovementAnimation>();
         orientationController = GetComponent<OrientationController>();
         inputReader = GetComponent<GenericInputReader>();
-        inputSource = GetComponent<BaseInputReader>();
         healthPoints = GetComponent<Health>();
     }
 
@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         gravityController = GetComponent<GravityController>();
         animator = GetComponent<Animator>();
         orientationController = GetComponent<OrientationController>();
+    }
+
+    public object Clone()
+    {
+        return Instantiate(gameObject);
     }
 #endif
 }

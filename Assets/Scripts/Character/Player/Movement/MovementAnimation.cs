@@ -16,7 +16,7 @@ public class MovementAnimation : MonoBehaviour
     private BaseInputReader _inputSource;
     private GenericInputReader _inputReader;
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponent<Player>();
         _animator = _player.animator;

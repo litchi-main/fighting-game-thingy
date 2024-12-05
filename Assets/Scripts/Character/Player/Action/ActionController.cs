@@ -25,10 +25,10 @@ public class ActionController : MonoBehaviour
     private bool _attackStartedInTheAir;
 
     private int _attackActiveAfter;
+    private int _attackActiveFor;
     private delegate void TurnOnHitboxFunc(Action<List<float>, float[]> Generate);
     private TurnOnHitboxFunc _TurnOnHitbox;
-
-    private void Awake()
+    public void Start()
     {
         using StreamReader reader = new("Assets/Resources/AttackData.json");
         var json = reader.ReadToEnd();
@@ -46,14 +46,12 @@ public class ActionController : MonoBehaviour
         _health = _player.healthPoints;
         _inputSource = _player.inputSource;
         _inputReader = _player.inputReader;
-    }
 
-    public void Start()
-    {
         _playerState = State.Neutral;
         _stun = 0;
         _attackStartedInTheAir = false;
         _attackActiveAfter = -1;
+        _attackActiveFor = -1;
         _TurnOnHitbox = null;
     }
 
@@ -65,12 +63,21 @@ public class ActionController : MonoBehaviour
 
             if (_attackActiveAfter > 0)
                 _attackActiveAfter--;
-
+            else 
             if (_attackActiveAfter == 0)
             {
                 _TurnOnHitbox(GenerateHitbox);
                 _TurnOnHitbox = null;
                 _attackActiveAfter--;
+            }
+            else 
+            if (_attackActiveFor > 0)
+                _attackActiveFor--;
+            else 
+            if (_attackActiveFor == 0)
+            {
+                _playerState = State.Recovering;
+                _attackActiveFor--;
             }
 
 
@@ -135,6 +142,7 @@ public class ActionController : MonoBehaviour
     {
         _stun = GetStunTotalDuration(attack.Name);
         _attackActiveAfter = attack.startup;
+        _attackActiveFor= attack.active;
         _TurnOnHitbox = attack.TurnOnHitbox;
     }
 
@@ -168,6 +176,11 @@ public class ActionController : MonoBehaviour
     public bool IsInNeutral()
     {
         return _playerState == State.Neutral;
+    }
+
+    public bool IsAttacking()
+    {
+        return _playerState == State.Attacking;
     }
 
     public void GetHit(int hitStun, int blockStun, float damage)
@@ -206,6 +219,7 @@ enum State
 {
     Neutral,
     Attacking,
+    Recovering,
     Hit,
     Blocking
 }

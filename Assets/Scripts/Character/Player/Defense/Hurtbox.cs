@@ -7,8 +7,9 @@ public class Hurtbox : MonoBehaviour
     [Header("params")]
     [SerializeField] private BoxCollider2D _collider;
 
-    private void Awake()
+    private void Start()
     {
+        gameObject.tag = GetComponentInParent<Player>().gameObject.tag;
         _collider = GetComponent<BoxCollider2D>();
     }
 

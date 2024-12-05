@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 6059968077435601650}
   - component: {fileID: 6059968077435601651}
   - component: {fileID: 6059968077435601643}
-  - component: {fileID: 6059968077435601642}
   m_Layer: 0
   m_Name: Player1
   m_TagString: P1
@@ -92,8 +91,9 @@ MonoBehaviour:
   <baseOrientation>k__BackingField: 0
   <opponent>k__BackingField: {fileID: 0}
   <inputReader>k__BackingField: {fileID: 6059968077435601643}
-  <inputSource>k__BackingField: {fileID: 6059968077435601642}
+  <inputSource>k__BackingField: {fileID: 0}
   <healthPoints>k__BackingField: {fileID: 6059968077435601606}
+  <mainCamera>k__BackingField: {fileID: 0}
 --- !u!114 &6059968077435601610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bb254d7d3859a4db98becb5bfdf828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 6059968077435601611}
   _camera: {fileID: 0}
   _healthBarColor: {r: 1, g: 0.9524385, b: 0, a: 1}
   _health: {fileID: 6059968077435601606}
@@ -354,23 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb782e49e933e64e8b4cea05eeeb153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6059968077435601642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6059968075417497656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20a9f21eacf88b419f8aed38287e719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lightAttack: 103
-  _heavyAttack: 104
-  _leftDirection: 97
-  _rightDirection: 100
-  _upDirection: 119
 --- !u!1 &6059968075838162065
 GameObject:
   m_ObjectHideFlags: 0

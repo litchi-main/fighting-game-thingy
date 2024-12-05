@@ -21,7 +21,7 @@ public class OrientationController : MonoBehaviour
         _prevOrientation = false;
     }
 
-    private void Awake()
+    private void Start()
     {
         _player = GetComponent<Player>();
         _animationController = _player.movementAnimator;

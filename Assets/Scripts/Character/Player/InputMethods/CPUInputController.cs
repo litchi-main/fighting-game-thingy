@@ -4,11 +4,12 @@ using static System.Math;
 public class CPUInputController : BaseInputReader
 {
     [Header("params")]
-    [SerializeField] private Player _player;
+    [SerializeField] public Player _player;
+    [SerializeField] private bool hardmode;
 
     private bool[] attacks = new bool[2];
     private int[] directions = new int[2];
-    private float effectiveRange = 3.3f;
+    private readonly float effectiveRange = 3.3f;
 
     public override bool[] attackButtonInput()
     {
@@ -20,7 +21,7 @@ public class CPUInputController : BaseInputReader
         return directions;
     }
 
-    public void Start()
+    public void Awake()
     {
         attacks[0] = false;
         attacks[1] = false;
@@ -36,5 +37,11 @@ public class CPUInputController : BaseInputReader
             attacks[1] = true;
         else
             attacks[1] = false;
+        if (_player.opponent.actionController.IsAttacking()
+            && hardmode)
+        {
+            attacks[1] = false;
+            directions[0] = _player.orientationController.getOrientation() ? 1 : -1;
+        }
     }
 }
